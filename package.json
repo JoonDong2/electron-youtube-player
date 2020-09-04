@@ -1,0 +1,70 @@
+{
+    "name": "electron-youtube-player",
+    "version": "0.1.0",
+    "homepage": "./",
+    "main": "public/electron.js",
+    "private": true,
+    "scripts": {
+        "start": "concurrently npm:*:dev",
+        "electron:dev": "nodemon --exec \"electron . --debug\"",
+        "dist:win": "electron-builder --win",
+        "dist:linux": "electron-builder --linux",
+        "dist:mac": "electron-builder --mac"
+    },
+    "build": {
+        "appId": "wilianzilv.reactron",
+        "productName": "reactron",
+        "files": [
+            "build/**/*",
+            "node_modules/**/*",
+            "backend/**",
+            "src/**/**"
+        ],
+        "extraResources": [
+            {
+                "from": "./resources/",
+                "to": "./"
+            }
+        ],
+        "win": {
+            "target": "nsis",
+            "icon": "resources/media/icon.ico"
+        },
+        "mac": {
+            "category": "your.app.category",
+            "icon": "resources/media/icon.ico"
+        },
+        "linux": {
+            "category": "Your app category",
+            "icon": "resources/media/icon.ico",
+            "target": {
+                "target": "appimage",
+                "arch": [
+                    "x64"
+                ]
+            }
+        }
+    },
+    "dependencies": {
+        "electron-is-dev": "^1.2.0"
+    },
+    "devDependencies": {
+        "concurrently": "^5.1.0",
+        "electron": "^8.2.3",
+        "electron-builder": "^22.5.1",
+        "electron-devtools-installer": "^3.0.0",
+        "nodemon": "^2.0.3"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    }
+}
