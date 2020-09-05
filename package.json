@@ -12,8 +12,8 @@
         "dist:mac": "electron-builder --mac"
     },
     "build": {
-        "appId": "wilianzilv.reactron",
-        "productName": "reactron",
+        "appId": "jd.electron-youtube-player",
+        "productName": "electron-youtube-player",
         "files": [
             "build/**/*",
             "node_modules/**/*",
