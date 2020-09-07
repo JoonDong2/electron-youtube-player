@@ -1,49 +1,21 @@
-<p align="center">
-  <img src="resources/media/logo_title.png" height="175" width="175" alt="Unform" />
-</p>
+### 소개
+다른 작업하면서 볼 수 있는 유튜브 플레이어
 
-<h3 align="center">
-  Yet another Electron + React boilerplate. 
-</h3>
+### 주요 기능
+ - 항상 위로 (항상위호 설정/해제)
+ - 사이즈 조절 (자동맞춤 → x1 또는 x2 선택)
+ - 광고 스킵 메크로
 
-<br>
+### 참고사항
+ - 16:9 비율로 자동조절됨 (영상이 3:2 등의 비율이라면 직접 조정)
+ - `C:\Users\{사용자 이름}\AppData\Local\Programs\electron-youtube-player` 경로에 설치됨
+ - 윈도우용으로만 코딩하였음. 리눅스, 맥용으로 빌드되나 메뉴 설정이 따로 필요함.
 
-## Overview
+### 빌드 방법
+```
+yarn
+yarn dist:win
+```
 
-Reactron is a tiny Electron project configured to work with React as frontend. The project has just the necessary to start a new app.
-
-## Getting Started
-
-Installation
-
-<code>\$ npm install</code>
-
-Developing
-
-<code>\$ npm start</code>
-
-## Important
-
-The backend and frontend code must be separated.
-
-<code>public</code> folder for the backend.
-
-<code>src</code> folder for the frontend.
-
-## Generating the bundle
-
-Windows
-
-<code>\$ npm run dist:win</code>
-
-Linux
-
-<code>\$ npm run dist:linux</code>
-
-Mac
-
-<code>\$ npm run dist:mac</code>
-
-## License
-
-[MIT](https://github.com/WilianZilv/reactron/blob/master/LICENSE)
+### 설치파일 다운로드
+[다운로드](https://github.com/JoonDong2/electron-youtube-player/raw/master/dist/electron-youtube-player%20Setup%200.1.1.exe)
