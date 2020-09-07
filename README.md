@@ -19,4 +19,4 @@ yarn dist:win
 ```
 
 ### 설치파일 바로 다운로드
-[다운로드](https://github.com/JoonDong2/electron-youtube-player/raw/master/dist/electron-youtube-player%20Setup%200.1.1.exe)
+[다운로드](https://github.com/JoonDong2/electron-youtube-player/raw/master/dist/electron-youtube-player%20Setup%200.1.2.exe)

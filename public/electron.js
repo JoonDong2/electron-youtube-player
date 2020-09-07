@@ -110,6 +110,7 @@ const menuItem6 = {
     label: '원상복구',
     click: () => {
         if(mainWindow) {
+            mainWindow.setSize(1050, 625)
             mainWindow.webContents.executeJavaScript(`
                 document.getElementById('container').style.display = 'flex'
                 if(document.getElementsByClassName('ytp-size-button').item(0).title === '기본 보기(t)') {
