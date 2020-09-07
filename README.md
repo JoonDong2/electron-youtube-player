@@ -1,5 +1,5 @@
 ### 소개
-다른 작업하면서 구석에 놓고 시철할 수 있는 유튜브 플레이어
+작업하면서 구석에 놓고 시철할 수 있는 유튜브 플레이어
 ![캡쳐](./capture.png)
 
 ### 주요 기능
@@ -12,11 +12,11 @@
  - `C:\Users\{사용자 이름}\AppData\Local\Programs\electron-youtube-player` 경로에 설치됨
  - 윈도우용으로만 코딩하였음. 리눅스, 맥용으로 빌드되나 메뉴 설정이 따로 필요함.
 
-### 빌드 방법
+### 설치파일 빌드 방법
 ```
 yarn
 yarn dist:win
 ```
 
-### 설치파일 다운로드
+### 설치파일 바로 다운로드
 [다운로드](https://github.com/JoonDong2/electron-youtube-player/raw/master/dist/electron-youtube-player%20Setup%200.1.1.exe)
