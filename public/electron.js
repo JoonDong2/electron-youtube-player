@@ -4,12 +4,28 @@ const {Menu} = require('electron')
 const path = require("path");
 const isDev = require("electron-is-dev");
 
+const autoFit = `
+    document.getElementById('container').style.display = 'none';
+    if(document.getElementsByClassName('ytp-size-button').item(0).title === '영화관 모드(t)') {
+        document.getElementsByClassName('ytp-size-button').item(0).click();
+    }
+`
+
+const skipAds = `
+    setInterval(function() {
+        var _cross = document.getElementsByClassName("ytp-ad-overlay-close-container")[0]; 
+        var _skip = document.getElementsByClassName("ytp-ad-skip-button")[0]; 
+        if (_cross != undefined) _cross.click(); 
+        if (_skip != undefined) _skip.click() 
+    }, 2000);
+`
+
 const menuItem1 = {
     label: '홈',
     click: () => {
         if(mainWindow) {
             mainWindow.webContents.executeJavaScript(`
-                window.location.href = 'https://www.youtube.com/'
+                document.getElementsByClassName('yt-simple-endpoint style-scope ytd-topbar-logo-renderer')[0].click()
             `)
         }
     }
@@ -58,13 +74,6 @@ const menuItem4_2 = {
         Menu.setApplicationMenu(newMenu)
     }
 }
-
-const autoFit = `
-    document.getElementById('container').style.display = 'none';
-    if(document.getElementsByClassName('ytp-size-button').item(0).title === '영화관 모드(t)') {
-        document.getElementsByClassName('ytp-size-button').item(0).click();
-    }
-`
 
 const menuItem5 = {
     label: '자동맞춤',
@@ -144,12 +153,7 @@ async function createWindow() {
 
     mainWindow.webContents.once('dom-ready', () => {
         mainWindow.webContents.executeJavaScript(`
-            setInterval(function() {
-                var _cross = document.getElementsByClassName("ytp-ad-overlay-close-container")[0]; 
-                var _skip = document.getElementsByClassName("ytp-ad-skip-button")[0]; 
-                if (_cross != undefined) _cross.click(); 
-                if (_skip != undefined) _skip.click() 
-            }, 2000);
+            ${skipAds}
         `);
     });
 
