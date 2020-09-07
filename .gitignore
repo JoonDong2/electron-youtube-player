@@ -9,8 +9,10 @@
 /coverage
 
 # production
-/build
-/dist
+/dist/win-unpacked
+/dist/builder-effective-config.yaml
+/dist/electron-youtube-player Setup 0.1.0.exe.blockmap
+/dist/latest.yml
 
 # misc
 .editorconfig

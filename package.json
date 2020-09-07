@@ -15,9 +15,8 @@
         "appId": "jd.electron-youtube-player",
         "productName": "electron-youtube-player",
         "files": [
-            "build/**/*",
+            "public/**/*",
             "node_modules/**/*",
-            "backend/**",
             "src/**/**"
         ],
         "extraResources": [
