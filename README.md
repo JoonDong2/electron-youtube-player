@@ -11,6 +11,7 @@
  - 16:9 비율로 자동조절됨 (영상이 3:2 등의 비율이라면 직접 조정)
  - `C:\Users\{사용자 이름}\AppData\Local\Programs\electron-youtube-player` 경로에 설치됨
  - 윈도우용으로만 코딩하였음. 리눅스, 맥용으로 빌드되나 메뉴 설정이 따로 필요함.
+ - `제어판 > 프로그램 추가/제거`에서 제거 가능
 
 ### 설치파일 빌드 방법
 ```
@@ -19,4 +20,4 @@ yarn dist:win
 ```
 
 ### 설치파일 바로 다운로드
-[다운로드](https://github.com/JoonDong2/electron-youtube-player/raw/master/dist/electron-youtube-player%20Setup%200.1.2.exe)
+[다운로드](https://github.com/JoonDong2/electron-youtube-player/raw/master/dist/electron-youtube-player%20Setup%200.1.3.exe)
