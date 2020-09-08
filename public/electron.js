@@ -103,6 +103,19 @@ const menuItem5 = {
             }
             
         },
+        {
+            label: 'x3',
+            click: () => {
+                if(mainWindow) {
+                    mainWindow.setSize(840, 510)
+                    mainWindow.webContents.executeJavaScript(`
+                        ${autoFit}
+                        window.scrollTo(0, 80);
+                    `)
+                }
+            }
+            
+        },
     ]
 }
 
