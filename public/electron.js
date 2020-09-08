@@ -202,7 +202,8 @@ async function createWindow() {
             window.addEventListener('scroll', () => { isScrolling = true });
             window.addEventListener('click', () => { 
                 setTimeout(() => {
-                    isScrolling = false 
+                    isHome = false;
+                    isScrolling = false;
                 }, 1000)
             });
             ${skipAds}
