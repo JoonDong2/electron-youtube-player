@@ -25,6 +25,7 @@ const menuItem1 = {
     click: () => {
         if(mainWindow) {
             mainWindow.webContents.executeJavaScript(`
+                isHome = true;
                 document.getElementsByClassName('yt-simple-endpoint style-scope ytd-topbar-logo-renderer')[0].click()
             `)
         }
@@ -86,6 +87,15 @@ const menuItem5 = {
                     mainWindow.webContents.executeJavaScript(`
                         ${autoFit}
                         window.scrollTo(0, 150);
+
+                        isHome = false;
+
+                        clearInterval(autoFitInterval);
+                        autoFitInterval = setInterval(() => {
+                            if(!isHome && !isScrolling){
+                                window.scrollTo(0, 150);
+                            } 
+                        }, 3000)
                     `)
                 }
             }
@@ -98,6 +108,15 @@ const menuItem5 = {
                     mainWindow.webContents.executeJavaScript(`
                         ${autoFit}
                         window.scrollTo(0, 125);
+
+                        isHome = false;
+
+                        clearInterval(autoFitInterval);
+                        autoFitInterval = setInterval(() => {
+                            if(!isHome && !isScrolling){
+                                window.scrollTo(0, 125);
+                            } 
+                        }, 3000)
                     `)
                 }
             }
@@ -107,10 +126,19 @@ const menuItem5 = {
             label: 'x3',
             click: () => {
                 if(mainWindow) {
-                    mainWindow.setSize(840, 510)
+                    mainWindow.setSize(840, 500)
                     mainWindow.webContents.executeJavaScript(`
                         ${autoFit}
                         window.scrollTo(0, 80);
+
+                        isHome = false;
+
+                        clearInterval(autoFitInterval);
+                        autoFitInterval = setInterval(() => {
+                            if(!isHome && !isScrolling){
+                                window.scrollTo(0, 80);
+                            } 
+                        }, 3000)
                     `)
                 }
             }
@@ -129,6 +157,7 @@ const menuItem6 = {
                 if(document.getElementsByClassName('ytp-size-button').item(0).title === '기본 보기(t)') {
                     document.getElementsByClassName('ytp-size-button').item(0).click();
                 }
+                clearInterval(autoFitInterval);
             `)
         }
     }
@@ -167,6 +196,15 @@ async function createWindow() {
 
     mainWindow.webContents.once('dom-ready', () => {
         mainWindow.webContents.executeJavaScript(`
+            let autoFitInterval;
+            let isHome = true;
+            let isScrolling = false;
+            window.addEventListener('scroll', () => { isScrolling = true });
+            window.addEventListener('click', () => { 
+                setTimeout(() => {
+                    isScrolling = false 
+                }, 1000)
+            });
             ${skipAds}
         `);
     });
