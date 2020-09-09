@@ -10,6 +10,13 @@ const autoFit = `
         document.getElementsByClassName('ytp-size-button').item(0).click();
     }
 `
+const autoFitInterval = (scroll) => `
+    autoFitInterval = setInterval(() => {
+        if(!isHome && !isScrolling){
+            window.scrollTo(0, ${scroll});
+        } 
+    }, 3000)
+`
 
 const skipAds = `
     setInterval(function() {
@@ -91,11 +98,7 @@ const menuItem5 = {
                         isHome = false;
 
                         clearInterval(autoFitInterval);
-                        autoFitInterval = setInterval(() => {
-                            if(!isHome && !isScrolling){
-                                window.scrollTo(0, 150);
-                            } 
-                        }, 3000)
+                        ${autoFitInterval(150)}
                     `)
                 }
             }
@@ -112,11 +115,7 @@ const menuItem5 = {
                         isHome = false;
 
                         clearInterval(autoFitInterval);
-                        autoFitInterval = setInterval(() => {
-                            if(!isHome && !isScrolling){
-                                window.scrollTo(0, 125);
-                            } 
-                        }, 3000)
+                        ${autoFitInterval(125)}
                     `)
                 }
             }
@@ -134,11 +133,7 @@ const menuItem5 = {
                         isHome = false;
 
                         clearInterval(autoFitInterval);
-                        autoFitInterval = setInterval(() => {
-                            if(!isHome && !isScrolling){
-                                window.scrollTo(0, 80);
-                            } 
-                        }, 3000)
+                        ${autoFitInterval(80)}
                     `)
                 }
             }
